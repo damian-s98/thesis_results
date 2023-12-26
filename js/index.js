@@ -1,12 +1,12 @@
-import 'ol/ol.css';
-import Map from 'ol/Map';
-import View from 'ol/View';
-import TileLayer from 'ol/layer/Tile';
-import VectorLayer from 'ol/layer/Vector';
-import OSM from 'ol/source/OSM';
-import VectorSource from 'ol/source/Vector';
-import GeoJSON from 'ol/format/GeoJSON';
-import { Style, Fill, Stroke, Circle } from 'ol/style';
+// import 'ol/ol.css';
+// import Map from 'ol/Map';
+// import View from 'ol/View';
+// import TileLayer from 'ol/layer/Tile';
+// import VectorLayer from 'ol/layer/Vector';
+// import OSM from 'ol/source/OSM';
+// import VectorSource from 'ol/source/Vector';
+// import GeoJSON from 'ol/format/GeoJSON';
+// import { Style, Fill, Stroke, Circle } from 'ol/style';
 
 
 const vectorSource = new VectorSource({
