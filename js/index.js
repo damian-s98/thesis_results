@@ -1,9 +1,11 @@
-const vectorSource = new ol.source.Vector({
-  url: 'data/test.geojson',
+//Centers
+
+const centerSource = new ol.source.Vector({
+  url: 'data/accidentsVaudFiltered/accidentsVaudClustering.geojson',
   format: new ol.format.GeoJSON(),
 })
 
-const vectorStyle = new ol.style.Style({
+const centerStyle = new ol.style.Style({
   fill: new ol.style.Fill({
     color: 'rgba(255, 255, 255, 0.6)',
   }),
@@ -23,9 +25,30 @@ const vectorStyle = new ol.style.Style({
   }),
 })
 
-const vectorLayer = new ol.layer.Vector({
-  source: vectorSource,
-  style: vectorStyle,
+const centerLayer = new ol.layer.Vector({
+  source: centerSource,
+  style: centerStyle,
+})
+
+
+//Set P
+const pointSource = new ol.source.Vector({
+  url: 'data/accidentsVaudFiltered/accidentsVaudP.geojson',
+  format: new ol.format.GeoJSON(),
+})
+
+const pointStyle = new ol.style.Style({
+  image: new ol.style.Circle({
+    radius: 2,
+    fill: new ol.style.Fill({
+      color: 'blue',
+    }),
+  }),
+})
+
+const allPointsLayer = new ol.layer.Vector({
+  source: pointSource,
+  style: pointStyle,
 })
 
 const map = new ol.Map({
@@ -33,11 +56,12 @@ const map = new ol.Map({
     new ol.layer.Tile({
       source: new ol.source.OSM(),
     }),
-    vectorLayer,
+    centerLayer,
+    allPointsLayer,
   ],
   target: 'map',
   view: new ol.View({
-    center: [0, 0], // Koordinaten anpassen
+    center: [0, 0],
     zoom: 1,
   }),
 })
