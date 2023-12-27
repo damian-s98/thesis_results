@@ -25,10 +25,10 @@ const centerStyle = new ol.style.Style({
   image: new ol.style.Circle({
     radius: 5,
     fill: new ol.style.Fill({
-      color: 'rgba(255, 255, 255, 0.6)',
+      color: 'rgba(255, 0, 0, 0.6)',
     }),
     stroke: new ol.style.Stroke({
-      color: '#319FD3',
+      color: '#ff0000',
       width: 1,
     }),
   }),
