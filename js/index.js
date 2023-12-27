@@ -1,7 +1,16 @@
 //Centers
 
+const firstTrySourceCenter = 'data/accidentsVaudFiltered/accidentsVaudClustering.geojson'
+const firstTrySourcePoints = 'data/accidentsVaudFiltered/accidentsVaudP.geojson'
+
+const bernSourcePoints = 'data/accidentsThunFiltered/BernPoints.geojson'
+
+// Clustering for Thun with k = 20:
+const thunSourceCenter = 'data/accidentsThunFiltered/ThunRegionClustering.geojson'
+
+
 const centerSource = new ol.source.Vector({
-  url: 'data/accidentsVaudFiltered/accidentsVaudClustering.geojson',
+  url: thunSourceCenter,
   format: new ol.format.GeoJSON(),
 })
 
@@ -33,7 +42,7 @@ const centerLayer = new ol.layer.Vector({
 
 //Set P
 const pointSource = new ol.source.Vector({
-  url: 'data/accidentsVaudFiltered/accidentsVaudP.geojson',
+  url: bernSourcePoints,
   format: new ol.format.GeoJSON(),
 })
 
@@ -56,8 +65,8 @@ const map = new ol.Map({
     new ol.layer.Tile({
       source: new ol.source.OSM(),
     }),
-    centerLayer,
     allPointsLayer,
+    centerLayer,
   ],
   target: 'map',
   view: new ol.View({
