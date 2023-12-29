@@ -17,6 +17,10 @@ const bernSourceCenter = 'data/accidents/cantonBern/BernRegionClustering.geojson
 //Clustering for Biel:
 const bielSourceCenter = 'data/accidents/cantonBern/BielRegionClustering.geojson'
 
+//Clustering for Langenthal:
+const langenthalSourceCenter = 'data/accidents/cantonBern/LangenthalRegionClustering.geojson'
+
+
 
 const thunCenterSource = new ol.source.Vector({
   url: thunSourceCenter,
@@ -37,6 +41,13 @@ const bielCenterSource = new ol.source.Vector({
   url: bielSourceCenter,
   format: new ol.format.GeoJSON(),
 })
+
+const langenthalCenterSource = new ol.source.Vector({
+  url: langenthalSourceCenter,
+  format: new ol.format.GeoJSON(),
+})
+
+
 
 const centerStyle = new ol.style.Style({
   fill: new ol.style.Fill({
@@ -78,6 +89,11 @@ const bielCenterLayer = new ol.layer.Vector({
   style: centerStyle,
 })
 
+const langenthalCenterLayer = new ol.layer.Vector({
+  source: langenthalCenterSource,
+  style: centerStyle,
+})
+
 
 //Set P
 const cantonBernPointSource = new ol.source.Vector({
@@ -109,6 +125,7 @@ const map = new ol.Map({
     interlakenCenterLayer,
     bernCenterLayer,
     bielCenterLayer,
+    langenthalCenterLayer,
   ],
   target: 'map',
   view: new ol.View({
