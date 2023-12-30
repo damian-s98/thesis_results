@@ -27,8 +27,15 @@
     <article>
         <h1>Seite nicht gefunden</h1>
         <div>
-            <p>Die von Ihnen angeforderte Seite konnte nicht gefunden werden. Bitte überprüfen Sie die URL oder gehen Sie zurück zur <a href="/">Startseite</a>.</p>
+            <p>Die von Ihnen angeforderte Seite konnte nicht gefunden werden. Bitte überprüfen Sie die URL oder gehen Sie zurück.</p>
+            <button onclick="goBack()">Zurück</button>
         </div>
     </article>
+
+    <script>
+        function goBack() {
+          window.history.back()
+        }
+        </script>
 </body>
 </html>
